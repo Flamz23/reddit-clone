@@ -1,17 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="main-container">
+    <!-- appbar-search -->
+    <!-- app-sideber -->
+    <mainContentView></mainContentView>
+    <navBar></navBar>
+    <!-- handles routing  between pages -->
+    <!-- settings -->
+    <!-- buy-coins -->
+    <!-- <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import mainContentView from "./components/mainContentView.vue";
+import navBar from "./components/navBar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    mainContentView,
+    navBar,
+  },
+};
 </script>
 
 <style>
@@ -20,7 +31,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #f5f5f5;
   margin-top: 60px;
 }
 </style>
