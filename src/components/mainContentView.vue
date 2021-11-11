@@ -1,5 +1,5 @@
 <template>
-  <div class="main-space-container">
+  <div class="main-space-container bg-gray-900">
     <router-view />
   </div>
 </template>
@@ -15,7 +15,5 @@ export default {};
 
   padding: 0;
   margin: 0;
-
-  background-color: #000000;
 }
 </style>

@@ -8,8 +8,8 @@
 
 <script>
 import postCard from "../components/postCard.vue";
-import { ref, onMounted, onUnmounted } from "vue";
 import getPosts from "../scripts/postLoader.js";
+import { ref, onMounted, onUnmounted } from "vue";
 
 export default {
   components: {
@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style>
-.scrolling-component {
+/* .scrolling-component {
   overflow-y: scroll;
-}
+} */
 </style>

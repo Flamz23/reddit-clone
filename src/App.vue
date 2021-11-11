@@ -28,18 +28,11 @@ export default {
 </script>
 
 <style>
-@font-face {
-  font-family: "Product Sans";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Open Sans"), local("OpenSans"),
-    url("https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2")
-      format("woff2");
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 html,
 body {
-  font-family: Product Sans;
+  font-family: "Roboto", sans-serif;
 }
 
 #app {
@@ -50,7 +43,7 @@ body {
   color: #f5f5f5;
   margin-top: 60px; */
 
-  font-family: Product Sans;
+  font-family: "Roboto", sans-serif;
 
   margin: 0;
   padding: 0;
