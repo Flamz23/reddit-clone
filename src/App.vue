@@ -1,9 +1,9 @@
 <template>
   <div class="main-container">
-    <!-- appbar-search -->
+    <app-bar></app-bar>
     <!-- app-sideber -->
-    <mainContentView></mainContentView>
-    <navBar></navBar>
+    <main-content-view></main-content-view>
+    <nav-bar></nav-bar>
     <!-- handles routing  between pages -->
     <!-- settings -->
     <!-- buy-coins -->
@@ -15,12 +15,14 @@
 <script>
 import mainContentView from "./components/mainContentView.vue";
 import navBar from "./components/navBar.vue";
+import appBar from "./components/appBar.vue";
 
 export default {
   name: "App",
   components: {
     mainContentView,
     navBar,
+    appBar,
   },
 };
 </script>
