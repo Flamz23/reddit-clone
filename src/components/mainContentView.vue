@@ -10,10 +10,16 @@ export default {};
 
 <style>
 .main-space-container {
+  position: fixed;
   width: 100%;
   height: 100%;
 
-  padding: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  padding: 55px 0px 60px;
   margin: 0;
 }
 </style>

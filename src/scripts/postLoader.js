@@ -1,19 +1,55 @@
-var names = ['Matt Maribojoc', 'Lebron James', 'Bill Gates', 'Childish Gambino'] // used to generate posts for this tutorial
+var snoowrap = require('snoowrap');
+var credentials = require('./cred.json') // import credentials
 
-const getPosts = (number) => {
-    // generate a number of posts
-    // in a real setting, this would be a database call or algorithm
+const requester = new snoowrap({
+    userAgent: credentials.userAgent,
+    clientId: credentials.clientId,
+    clientSecret: credentials.clientSecret,
+    username: credentials.username,
+    password: credentials.password
+});
 
-    let ret = []
+var loader = {};
+
+loader.initialialize = async function (number) {
+    let ret = []; // create return array
+    var postTitles = await requester.getHot().map(post => post.title).then(titles => { return titles }); // get hot post titles
 
     for (var i = 0; i < number; i++) {
         ret.push({
-            author: names[i % names.length],
+            author: postTitles[i % postTitles.length],
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.'
         })
     }
 
-    return ret
+    return ret;
 }
 
-export default getPosts
+export default loader
+
+
+
+
+
+
+// const getPosts = (number) => {
+//     // const names = await p;
+//     var names = [
+//         "Matt Maribojoc",
+//         "Lebron James",
+//         "Bill Gates",
+//         "Childish Gambino",
+//     ];
+//     let ret = []
+//     for (var i = 0; i < number; i++) {
+//         ret.push({
+//             author: names[i % names.length],
+//             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.'
+//         })
+//     }
+//     return ret
+// }
+
+// requester.getHot().map(post => post.title).then(console.log);
+// const p = requester.getHot().map(post => post.title).then(titles => { return titles });
+// console.log(p);
