@@ -19,7 +19,7 @@ export default {};
   left: 0;
   bottom: 0;
 
-  padding: 55px 0px 60px;
+  padding: 0;
   margin: 0;
 }
 </style>

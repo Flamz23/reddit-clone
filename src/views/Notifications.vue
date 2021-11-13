@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full h-screen overflow-y-scroll">
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur
       cumque error labore iste ipsum voluptas officia, natus ad qui numquam
