@@ -30,7 +30,7 @@ export default {
     async intersected() {
       //obsevrvable component emits intersect and calls intersection on visible
       // append more posts on intersect event (https://vueschool.io/articles/vuejs-tutorials/build-an-infinite-scroll-component-using-intersection-observer-api/)
-      const newPosts = await loader.initialialize(10);
+      const newPosts = await loader.getHot();
       this.posts = [...this.posts, ...newPosts];
     },
   },

@@ -1,4 +1,5 @@
-var snoowrap = require('snoowrap');
+const snoowrap = require('snoowrap');
+const axios = require('axios');
 var credentials = require('./cred.json') // import credentials
 
 const requester = new snoowrap({
@@ -11,45 +12,20 @@ const requester = new snoowrap({
 
 var loader = {};
 
-loader.initialialize = async function (number) {
-    let ret = []; // create return array
-    var postTitles = await requester.getHot().map(post => post.title).then(titles => { return titles }); // get hot post titles
-
-    for (var i = 0; i < number; i++) {
-        ret.push({
-            author: postTitles[i % postTitles.length],
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.'
-        })
-    }
-
+loader.getHot = async function () {
+    let ret = requester.getHot().then(res => { return res }); // get posts in hot
     return ret;
 }
 
+loader.getSubbredditIcon = async function () {
+    let ret = axios
+        .get(
+            `https://www.reddit.com/${this.post.subreddit_name_prefixed}/about.json`
+        )
+        .then((res) => {
+            return res.data.data.icon_img;
+        });
+    this.subredditicon_img = await ret;
+}
+
 export default loader
-
-
-
-
-
-
-// const getPosts = (number) => {
-//     // const names = await p;
-//     var names = [
-//         "Matt Maribojoc",
-//         "Lebron James",
-//         "Bill Gates",
-//         "Childish Gambino",
-//     ];
-//     let ret = []
-//     for (var i = 0; i < number; i++) {
-//         ret.push({
-//             author: names[i % names.length],
-//             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.'
-//         })
-//     }
-//     return ret
-// }
-
-// requester.getHot().map(post => post.title).then(console.log);
-// const p = requester.getHot().map(post => post.title).then(titles => { return titles });
-// console.log(p);
