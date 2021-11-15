@@ -9,10 +9,10 @@
     <div class="mx-1.5 my-2 px-3 py-2 rounded-md bg-gray-700">
       <div class="flex my-1.5">
         <!-- subreddit icon -->
-        <div>
+        <div class="p-0.5 mr-2 rounded-full bg-white">
           <img
-            class="w-10 h-10 mr-2 rounded-full"
-            :src="subredditicon_img"
+            class="w-10 h-10 rounded-full"
+            :src="handleSubredditIcon"
             alt=""
           />
         </div>
@@ -114,31 +114,9 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
-  data() {
-    return {
-      subredditicon_img: "",
-    };
-  },
   props: {
     post: Object,
-  },
-  mounted() {
-    this.getSubredditIcon();
-  },
-  methods: {
-    async getSubredditIcon() {
-      let ret = axios
-        .get(
-          `https://www.reddit.com/${this.post.subreddit_name_prefixed}/about.json`
-        )
-        .then((res) => {
-          return res.data.data.icon_img;
-        });
-      this.subredditicon_img = await ret;
-    },
   },
   computed: {
     concatScore() {
@@ -152,6 +130,15 @@ export default {
       if (originalNumber >= 1000) {
         return `${(originalNumber / 1000).toFixed(1)}k`;
       } else return originalNumber;
+    },
+    handleSubredditIcon() {
+      let defaultIco = require("../assets/default_subreddit_icon.png");
+      let ico = this.post.subreddit_SubIcon;
+
+      if (ico == "") {
+        return defaultIco;
+      }
+      return ico;
     },
   },
 };
