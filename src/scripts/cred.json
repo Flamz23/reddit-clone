@@ -1,0 +1,8 @@
+{
+    "userAgent": "redd-clone v1.0 by /u/falmz23",
+    "clientId": "tEH8SrwgaeSJPi8EfShuNg",
+    "clientSecret": "sh8dayKc02Fr75vNpSTzx6W_R0uaxA",
+    "redirect-uri": "http://localhost:8080/authorization_callback",
+    "username": "Falmz23",
+    "password": "Samsung 14dami"
+}
