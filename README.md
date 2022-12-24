@@ -33,7 +33,7 @@ cd reddit-clone
 npm install
 ```
 
-4. create a `.env` filr in the root directory with your reddit oauth credentials
+4. create a `.env` file in the root directory with your reddit oauth credentials
 
 ```
 VUE_APP_USERAGENT={YOUR_REDDIT_APP_USERAGENT}
