@@ -1,13 +1,12 @@
 const snoowrap = require('snoowrap');
 const axios = require('axios');
-var credentials = require('./cred.json') // import credentials
 
 const requester = new snoowrap({
-    userAgent: credentials.userAgent,
-    clientId: credentials.clientId,
-    clientSecret: credentials.clientSecret,
-    username: credentials.username,
-    password: credentials.password
+    userAgent: process.env.VUE_APP_USERAGENT,
+    clientId: process.env.VUE_APP_CLIENT_ID,
+    clientSecret: process.env.VUE_APP_CLIENT_SECRET,
+    username: process.env.VUE_APP_USERNAME,
+    password: process.env.VUE_APP_PWD
 });
 
 var loader = {};
