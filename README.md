@@ -39,12 +39,6 @@ npm run serve
 
 5. The project will now be running at http://localhost:8080.
 
-### Compiles and hot-reloads for development
-
-```
-npm run serve
-```
-
 ### Compiles and minifies for production
 
 ```
