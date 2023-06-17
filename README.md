@@ -1,6 +1,6 @@
 # reddit-clone
 
-This project is a simple clone of the popular social media platform, Reddit, built using the Vue.js JavaScript framework.
+This project is a simple clone of the popular social media platform, Reddit, built using the Vue.js JavaScript framework. Snoowrap is used as a wrapper for authentication and API calls which are then displayed on the front-end
 
 ![Screenshots](https://i.imgur.com/kV1wj6q_d.webp?maxwidth=760&fidelity=grand)
 
